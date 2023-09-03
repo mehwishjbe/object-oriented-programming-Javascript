@@ -53,7 +53,7 @@ const another = new Circle(1); */
 
 /* Value types/Primitives V/S Reference types */
 
-//Value types
+/* //Value types
 let x = 10;
 let y = x;
 x= 20;
@@ -77,4 +77,19 @@ function increase(obj){
     obj.value++;
 }
 increase(obj);
-console.log(obj);
+console.log(obj); */
+
+
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('Draw');
+    }
+}
+const circle = new Circle(10);
+circle.location = { x:1 };
+
+const propertyName = 'center-location';
+circle[propertyName] = { y : 1};
+
+delete circle.location;
