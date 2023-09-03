@@ -1,8 +1,8 @@
-// 4 main pillars of OOP        -Encapsulation        -Abstraction        -Inheritance        -Polymorphism
+// 4 main concepts of OOP        -Encapsulation        -Abstraction        -Inheritance        -Polymorphism
 
 
 // Creating objects by Literal
-const circle = {
+/* const circle = {
     radius: 1,
     location: {
         x:1,
@@ -12,10 +12,10 @@ const circle = {
         console.log('Draw');
     }
 };
-// circle.draw();
+circle.draw(); */
 
 // Creating objects by Factory Function
-function createCircle(radius){
+/* function createCircle(radius){
     return{
         radius,
         draw: function(){
@@ -24,7 +24,14 @@ function createCircle(radius){
     };
 }
 const circle1 = createCircle(1);
-console.log(circle1);
+console.log(circle1); */
 
 
-
+// Creating objects by Constructor Function
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('Draw');
+    } 
+}
+const another = new Circle(1);
