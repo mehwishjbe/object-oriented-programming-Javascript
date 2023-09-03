@@ -117,7 +117,7 @@ console.log('Circle has a radius'); */
 
 
 // Private methods
-function Circle(radius){
+/* function Circle(radius){
     this.radius = radius;
     let defaultLocaiton = { x:0, y:0};
     let computeOptimumLocation = function(factor){
@@ -130,4 +130,35 @@ function Circle(radius){
     }
 }
 const circle = new Circle(10);
+circle.draw(); */
+
+// Getter and Setter
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocation = { x:0, y:0};
+
+    this.getDefaultLocation = function(){
+        return defaultLocation;
+    }
+
+    this.draw = function(){
+        console.log('draw');
+    };
+
+    Object.defineProperty(this, 'defaultLocaition', {
+
+        get: function(){
+            return defaultLocation;
+        },
+        set: function(value){
+            if(!value.x || !value.y)
+            throw new Error('Invalid Location');
+
+            defaultLocation = value
+        }
+
+    });
+}
+const circle = new Circle(10);
+circle.defaultLocation = 1;
 circle.draw();
