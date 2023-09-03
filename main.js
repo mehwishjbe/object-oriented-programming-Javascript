@@ -79,8 +79,8 @@ function increase(obj){
 increase(obj);
 console.log(obj); */
 
-
-function Circle(radius){
+//Adding and deleting property
+/* function Circle(radius){
     this.radius = radius;
     this.draw = function(){
         console.log('Draw');
@@ -92,4 +92,25 @@ circle.location = { x:1 };
 const propertyName = 'center-location';
 circle[propertyName] = { y : 1};
 
-delete circle.location;
+delete circle.location; */
+
+
+// Enumerating Property
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('Draw');
+    }
+}
+const circle = new Circle(10);
+
+for(let key in circle){
+    if(typeof circle[key] !== 'function')
+        console.log(key, circle[key]);
+}
+
+const keys = Object.keys(circle);
+console.log(keys);
+
+if ( 'radius' in circle)
+console.log('Circle has a radius');
