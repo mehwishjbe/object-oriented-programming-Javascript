@@ -96,7 +96,7 @@ delete circle.location; */
 
 
 // Enumerating Property
-function Circle(radius){
+/* function Circle(radius){
     this.radius = radius;
     this.draw = function(){
         console.log('Draw');
@@ -113,4 +113,21 @@ const keys = Object.keys(circle);
 console.log(keys);
 
 if ( 'radius' in circle)
-console.log('Circle has a radius');
+console.log('Circle has a radius'); */
+
+
+// Private methods
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocaiton = { x:0, y:0};
+    let computeOptimumLocation = function(factor){
+        //......
+    }
+    this.draw = function(){
+        this.computeOptimumLocation(0.1);
+
+        console.log('draw');
+    }
+}
+const circle = new Circle(10);
+circle.draw();
